@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- no cache headers -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <!-- end no cache headers -->
+    <title>MSSUI前端基础构成</title>
+    <link href="../../assets/css/reset.css" rel="stylesheet">
+    <link href="../../assets/css/grids.css" rel="stylesheet">
+    <link href="../../assets/css/modules.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="../../assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+     <script src="../../assets/js/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <h4>弹出层</h4>
+    <h4>基础</h4>
+    <div class="container g-bottom">
+        <button class="m-button m-button-big fn-r3px g-right" id="jb">基础弹出层</button>
+    </div>
+    <h4>可移动弹出层</h4>
+    <div class="container g-bottom">
+        <button class="m-button m-button-blue m-button-big fn-r3px g-right" id="yb">可移动弹出层</button>
+    </div>
+    <h4>iframe</h4>
+    <div class="container g-bottom">
+        <button class="m-button m-button-orange m-button-big fn-r3px g-right" id="ib">iframe弹出</button>
+    </div>
+    <script src="../../assets/js/jquery-1.8.3.min.js"></script>
+    <script src="../../assets/js/MSSPlug.js"></script>
+
+    <script type="text/javascript">
+        $('#jb').on('click', function() {
+            MSSPlug.dialog({
+                title: "基础弹出层", //弹出层标题
+                width: 0, //弹出层宽度
+                height: 0, //弹出层高度
+                mask: true, //是否需要遮罩层
+                drag: false, //拖动
+                renovation: true, //关闭刷新
+                buttons: [{
+                        text: "确认",
+                        backfn: "gggsss"
+                    }, {
+                        text: "关闭",
+                        backfn: "dffff"
+                    }
+
+                ],
+                loader: {
+                    isload: true, //不加载
+                    isfarme: false,
+                    url: 'http://www.mssui.com/app/Layout/HighGrid.html',
+                    params: {
+                        a: 'a'
+                    }, //附加的参数
+                    ispost: true //不延迟加载
+                } //加载层
+
+            });
+        });
+        $('#yb').on('click', function() {
+            MSSPlug.dialog({
+                title: "基础弹出层", //弹出层标题
+                width: 0, //弹出层宽度
+                height: 0, //弹出层高度
+                mask: true, //是否需要遮罩层
+                drag: true, //拖动
+                renovation: true, //关闭刷新
+                buttons: [],
+                loader: {
+                    isload: true, //不加载
+                    isfarme: false,
+                    url: 'http://www.mssui.com/app/Style/Table.html',
+                    params: {
+                        a: 'a'
+                    }, //附加的参数
+                    ispost: true //不延迟加载
+                } //加载层
+
+            });
+        });
+        $('#ib').on('click', function() {
+            MSSPlug.dialog({
+                title: "基础弹出层", //弹出层标题
+                width: 0, //弹出层宽度
+                height: 0, //弹出层高度
+                mask: true, //是否需要遮罩层
+                drag: false, //拖动
+                renovation: true, //关闭刷新
+                buttons: [],
+                loader: {
+                    isload: true, //不加载
+                    isfarme: true,
+                    url: 'http://www.mssui.com/app/Style/Tip.html',
+                    params: {
+                        a: 'a'
+                    }, //附加的参数
+                    ispost: true //不延迟加载
+                } //加载层
+
+            });
+        });
+
+        function gggsss() {
+            alert("回调");
+        }
+
+        function dffff() {
+            alert("s回调");
+        }
+    </script>
+</body>
+
+</html>

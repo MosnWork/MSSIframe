@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- no cache headers -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <!-- end no cache headers -->
+    <title>MSSUI前端基础构成</title>
+    <link href="../../assets/css/reset.css" rel="stylesheet">
+    <link href="../../assets/css/grids.css" rel="stylesheet">
+    <link href="../../assets/css/modules.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+     <script src="../../assets/js/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <h4>3D图-柱状图少量的时候使用，量大会崩溃</h4>
+    <div class="container">
+        <div class="container-fluid g-bottom" id="chartsbox" style="height:500px;">
+
+        </div>
+    </div>
+    <script src="../../assets/js/jquery-1.8.3.min.js"></script>
+    <script src="../../assets/js/MSSUI.js"></script>
+    <script src="../../assets/js/MSSPlug.js"></script>
+    <script src="../../assets/amcharts/amcharts.js"></script>
+    <script src="../../assets/amcharts/serial.js"></script>
+    <script src="../../assets/amcharts/plugins/export/export.min.js"></script>
+    <script src="../../json/chartjson.js"></script>
+    <script src="../../assets/js/MSSCharts.js"></script>
+    <script type="text/javascript">
+        MSSCharts.lineChart({
+            "targetID":"chartsbox",
+            "type":"column",
+            "dataProvider": chartjsons.data,
+            "categoryField": "stime",
+            "graphs": [{
+                "valueField": "lastweek",
+                "balloonText": "上周数据"
+            }, {
+                "valueField": "yesterday",
+                "balloonText": "昨日数据"
+            }, {
+                "valueField": "today",
+                "balloonText": "当日数据"
+            }],
+            is3D:true,
+            "export":true
+
+        });
+        //MSSCharts.ssss(chartjson.data);
+    </script>
+</body>
+
+</html>

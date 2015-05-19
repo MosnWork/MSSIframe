@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- no cache headers -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <!-- end no cache headers -->
+    <title>MSSUI前端基础构成</title>
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/mssiframe.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+    <div class="mssm-content">
+        <div class="mssm-header">
+            <div class="mssm-header-top">
+                <div class="mssm-header-top-logo">
+                    MSSUI前端基础构成
+                </div>
+                <div class="mssm-header-top-user">
+                    欢迎您， <span>张涛</span><a title="退出系统" href="">[退出]</a>
+                </div>
+            </div>
+            <div class="mssm-nav-box">
+                <div class="mssm-nav-set">
+                    <span class="icon-home"></span>
+                </div>
+                <ul>
+                    <li class="mssm_selected">
+                        管理首页<i class="icon-remove-mini"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mssm-main">
+            <div class="mssm-sidebar"></div>
+            <div class="mssm_iframe">
+                <div class="mssm-i-box">
+                    <div class="mssm-i-box-left">
+                        <i class="sui-icon icon-chevron-left"></i>
+                    </div>
+                    <div class="mssm-i-box-nav">
+                        <dl>
+                            <dt class="mssm-i-box-selected" data-key="-1">
+									管理首页</i>
+								</dt>
+                        </dl>
+                    </div>
+                    <div class="mssm-i-box-right">
+                        <i class="sui-icon icon-chevron-right"></i>
+                    </div>
+                </div>
+                <ul id="mssm-box-iframe">
+                    <li class="mssm_selected" data-key="-1">
+                        <iframe width="100%" height="100%" frameborder="0" src="app/Main.html"></iframe>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- script start -->
+    <script src="assets/js/MSS_Iframe.js"></script>
+    <!--这个JS是伪造数据，实际项目可删除改成异步获取菜单也可以用后台程序生成此文件-->
+    <script src="json/menu.js"></script>
+    <script type="text/javascript">
+        MSS_Iframe.init(menuData);
+    </script>
+    <!-- script end -->
+</body>
+
+</html>
