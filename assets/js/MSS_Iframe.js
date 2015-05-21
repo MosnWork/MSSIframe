@@ -123,6 +123,11 @@ var MSS_Iframe = (function() {
             }
         });
 
+        //回首页
+        $(".h-nav-home").click(function() {
+            changeSelect("-1");
+        });
+        
         //关闭工作区导航的右击菜单
         $(".iframe-nav-box").on("contextmenu", function(e) {
             return false;
