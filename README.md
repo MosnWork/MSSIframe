@@ -8,6 +8,12 @@
 
 对iframe提供了3种方法
 
+首页调用可以开放顶部导航
+MSS_Iframe.init({
+            menuDate: menuData,//数组
+            isTop: true,//是否需要顶部导航
+            icon: "icon-file"//左侧菜单的图标
+        });
 
     //这里就是调用顶级父窗口打开页面的方法
     top.MSS_Iframe.openIframe({
