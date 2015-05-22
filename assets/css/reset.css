@@ -331,15 +331,3 @@ p {
     padding:0;
     margin:0;
 }
-/* 清理浮动 */
-.fn-clear:after {
-    visibility:hidden;
-    display:block;
-    font-size:0;
-    content:" ";
-    clear:both;
-    height:0;
-}
-.fn-clear {
-    zoom:1; /* for IE6 IE7 */
-}
